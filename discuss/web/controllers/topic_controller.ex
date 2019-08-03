@@ -4,7 +4,8 @@ defmodule Discuss.TopicController do
     alias Discuss.Topic
 
     def index(conn, params) do
-        topics = Repo.add(Topic)                
+        topics = Repo.all(Topic)                
+        render conn, "index.html", topics: topics
     end
 
     def new(conn, _params) do
